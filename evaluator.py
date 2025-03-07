@@ -7,6 +7,8 @@ import traceback
 import numpy as np 
 import torch 
 
+from collections import Counter
+
 #pattern = r"def agent_v\d+\([^)]*\)\s*(?:->\s*[^:]+)?:\n(?:    .+\n)*"
 
 pattern = re.compile(r"def agent_v\d+\([^)]*\)\s*(?:->\s*[^:]+)?:\n(?:\s+.*(?:\n|$))*")
@@ -47,27 +49,38 @@ def extract_agent(generated_text: str):
 
     return extracted_functions[-1] if len(extracted_functions)!=0 else None
 
+def single_process_extractor(generated_text:str): 
+  candidate = find_agent(generated_text) 
+  if not candidate: 
+    return None
+  return extract_agent(candidate)
 
-def run_agent(code: str, env_name: str=None): 
+
+def run_agent(candidate_code: str, env_name: str=None): 
+
+  if candidate_code is None: 
+    return None, None, None
+
+  code = single_process_extractor(candidate_code)
 
   if code is None: 
-    return None
+    return None, None, None
 
   match_name = re.search(r"def (agent_v\d+)\(", code)
   agent_name = match_name.group(1) if match_name else None
 
-  if not agent_name: 
-    return None
+  if agent_name is None: 
+    return None, None, None
 
   if code is None: 
-    return None
+    return None, None, None
 
   sandbox = {"__builtins__": __builtins__}
   #print(f'code in evaluator: {code}')
   try:
     exec(code,sandbox) 
   except: 
-    return None
+    return None, None, None
 
   if not env_name: 
     env = gym.make("Hopper-v4")
@@ -78,6 +91,7 @@ def run_agent(code: str, env_name: str=None):
 
   try:
     total_reward = 0
+    actions_taken = []
     observation, info = env.reset()
     done = False
     truncated = False
@@ -85,12 +99,27 @@ def run_agent(code: str, env_name: str=None):
     while not done and not truncated:
         action = sandbox[agent_name](observation)
         #print(len(env.step(action)))
+        actions_taken.append(action)
         observation, reward, done, truncated, info = env.step(action)
         total_reward += reward
 
-    return int(total_reward)
+    env.close()
+
+    if isinstance(env.action_space, gym.spaces.Box):
+        quantized_actions = [tuple(np.round(np.array(a), 1)) for a in actions_taken]
+    else:
+        quantized_actions = actions_taken
+
+    action_counts = Counter(quantized_actions)
+    total_actions = sum(action_counts.values())
+    normalized_distribution = {action: count / total_actions for action, count in action_counts.items()}
+
+    return code, int(total_reward), normalized_distribution
+
   except Exception as e:
     print(f"Error: {traceback.format_exc()}")
-    return None 
+    return None, None, None 
 
+def evaluate_agent(text: str):
+    return run_agent(text, "Hopper-v4")
 

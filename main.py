@@ -5,6 +5,7 @@ import os
 import pathlib
 import pickle
 import time
+import psutils 
 
 import heapq
 from typing import List, Optional
@@ -19,10 +20,16 @@ from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 
 from programs_database import Island
-from evaluator import find_agent, extract_agent, run_agent
+from evaluator import evaluate_agent
+from scoring import kl_divergence
+
+import threading
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+
+lock = threading.Lock()
+database_lock = threading.Lock()
 
 import wandb 
-
 import argparse 
 
 parser = argparse.ArgumentParser()
@@ -39,12 +46,33 @@ wandb.init(project='quality_diversity',
 model_id = "meta-llama/Llama-3.3-70B-Instruct"
 #model_id = "upiter/TinyCodeLM-400M"
   
+"""
 pipeline = transformers.pipeline(
     "text-generation",
     model=model_id,
     model_kwargs={"torch_dtype": torch.bfloat16},
     device_map="auto",
   )
+"""
+tokenizer = AutoTokenizer.from_pretrained(model_id) 
+tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto') 
+#print(f"Memory usage after loading checkpoint: {process.memory_info().rss / (1024**2):.2f} MB")
+
+
+class Sampler: 
+    def __init__(self, model_id: str = "meta-llama/Llama-3.3-70B-Instruct"): 
+        #self.tokenizer = AutoTokenizer.from_pretrained(model_id) 
+        #self.tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+        #self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto') 
+        self.device = self.model.device
+    
+    def generate(self, input_text: str | List[str]): 
+        #print(input_text)
+        input_ids = tokenizer(input_text, return_tensors='pt', 
+                                   padding=True, truncation=True).to(self.device)
+        
+        return model.generate(**input_ids, max_length=1024) 
 
 #initial_template: str 
 initial_code_hopper = """
@@ -122,7 +150,7 @@ database = {}
 
 #INITIALZE SAMPLER
 #sampler is a simple LLM (pipline.generate) 
-sampler = pipeline
+sampler = Sampler()
 
 #INITIALIZE EVALUATOR 
 #evaluator: 
@@ -133,6 +161,79 @@ sampler = pipeline
 
 #INITIALIZE A DISTANCE FUNCTION e.g. DBSCAN 
 
+process = psutil.Process(os.getpid())
+
+def monitor_memory(interval=0.5):
+    process = psutil.Process(os.getpid())
+    while True:
+        rss_mb = process.memory_info().rss / (1024 ** 2)
+        print(f"[Memory Monitor] RSS: {rss_mb:.2f} MB")
+        time.sleep(interval)
+
+# Start the memory monitor thread
+monitor_thread = threading.Thread(target=monitor_memory, daemon=True)
+monitor_thread.start()
+
+
+def process_pair(score, code, behaviour): 
+    if score is None: 
+        return 
+
+    with lock: 
+        if len(database.keys())==0: 
+            database[0] = Island(code=[code], score=[score], behaviour=[behaviour])
+            wandb.log({f'score_island_{len(database.keys())}': score})
+            wandb.log({f'program_{len(database.keys())}':wandb.Html(f'score: {score}<pre>{code}</pre>')})
+        else: 
+            update_database(code, score, behaviour, threshold=0.1)
+
+
+def update_database(candidate_code, candidate_score, candidate_behaviour, threshold):
+    """
+    Update the global dataset with a candidate agent.
+    
+    - candidate_behaviour: A dictionary representing the probability distribution over actions.
+    - threshold: A KL divergence threshold used to decide if the candidate is too dissimilar.
+    
+    If the candidate's behaviour (as measured by KL divergence) is not similar enough to any
+    existing island, a new Island is created. Otherwise, if the candidate is similar and its score
+    is higher than the best in that island, the candidate is appended to that island and the best values are updated.
+    """
+    global database
+    with database_lock:
+        min_kl = float('inf')
+        closest_index = None
+        # Loop over islands and compute KL divergence.
+        for idx, island in database.items():
+            divergence = kl_divergence(candidate_behaviour, island.best_behaviour)
+            if divergence < min_kl:
+                min_kl = divergence
+                closest_index = idx
+
+        # If no island is similar enough (KL divergence above threshold) or no island exists:
+        if min_kl > threshold or closest_index is None:
+            new_index = len(database)
+            database[new_index] = Island(candidate_code, candidate_score, candidate_behaviour)
+            wandb.log({f'score_island_{new_index}': candidate_score})
+            wandb.log({f'program_{new_index}':wandb.Html(f'score: {candidate_score}<pre>{candidate_code}</pre>')})
+            #print(f"Created new Island {new_index} (score: {candidate_score}, KL divergence: {min_kl:.4f})")
+        else:
+            # Candidate is similar to an existing island.
+            island = database[closest_index]
+            if candidate_score > island.best_score:
+                # Append the new candidate and update best values.
+                island.codes.append(candidate_code)
+                island.scores.append(candidate_score)
+                island.best_score = candidate_score
+                island.best_code = candidate_code
+                wandb.log({f'score_island_{closest_index}': candidate_score})
+                wandb.log({f'program_{closest_index}':wandb.Html(f'score: {candidate_score}<pre>{candidate_code}</pre>')})
+                #print(f"Updated Island {closest_index} with a higher score: {candidate_score} (prev: {island.best_score})")
+            #else:
+                #print(f"Candidate rejected for Island {closest_index} (score: {candidate_score} <= best: {island.best_score})")
+
+
+
 time_step = 0 
 if __name__ == "__main__": 
     for t in range(int(1e4)): 
@@ -141,38 +242,29 @@ if __name__ == "__main__":
         print(f'databse.keys: {database.keys()}')
         if len(database.keys()) < 10: 
             prompt = initial_code_hopper
-            prompts = [initial_code_hopper]
+            prompts = [initial_code_hopper]*10
         else: 
             prompt = database[random.sample(list(database.keys()), 1)[0]].get_prompt()
-            prompts = [i.get_prompt for i in database.values()]
+            prompts = [i.get_prompt() for i in database.values()]
 
-        print('prompting sampler')
-        print(f'prompt: {prompt}') 
-        code = sampler(prompt, max_new_tokens=4096)  
-        code = code[0]['generated_text']
-        print(f'sample in sampler: {code}')
+        print('prompting LLM') 
+        code = sampler.generate(prompts)
+        codes = tokenizer.batch_decode(code)  
+        print(f'sample in sampler: {codes}')
 
-        agent = extract_agent(find_agent(code))
-        print(f'agent in sampler: {agent}')
-        score = run_agent(agent) 
-        print(f'score in sampler: {score}')
-        
-        if score is None: 
-            continue
+        with ProcessPoolExecutor(max_workers=2) as executor:
+            results = list(executor.map(evaluate_agent, codes))
 
-        if len(database.keys()) == 0:
-            database[0] = Island(code=[agent], score=[score])
-            wandb.log({f'score_island_0': score})
-            wandb.log({f'program_0':wandb.Html(f'score: {score}<pre>{agent}</pre>')})
+        print(results)
 
-            continue
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            # Submitting tasks for each (score, code) pair.
+            futures = [executor.submit(process_pair, result[1], result[0], result[2]) for result in results]
+            # Optionally, wait for all futures to complete.
+            for future in futures:
+                future.result()
 
-        elif len(database.keys()) < 10: 
-            database[len(database.keys())] = Island(code=[agent], score=[score])
-            wandb.log({f'score_island_{len(database.keys())}': score})
-            wandb.log({f'program_{len(database.keys())}':wandb.Html(f'score: {score}<pre>{agent}</pre>')})
-
-            continue
+        '''
 
         with torch.no_grad():
             code_embedding = embedding_model.encode(agent)  
@@ -183,9 +275,7 @@ if __name__ == "__main__":
 
         distance_from_islands = (1 - similarity).clamp(min=0)
 
-
-
-        if float(min(distance_from_islands)[0]) > 0.1: 
+        if float(min(distance_from_islands)[0]) > 0.4: 
             database[len(database.keys())+1] = Island(code=[agent], score=[score])
             #database[len(islands)+1] = Island(codes=[code], scores=[score]) 
             wandb.log({f'best_score_island_{len(database.keys())+1}': score})
@@ -202,8 +292,10 @@ if __name__ == "__main__":
         if time_step%1e3 == 0: 
             if len(databse.keys()) > 10: 
                 database = heapq.nlargest(10, database, key=lambda island: island.best_score)
+        '''
 
-wandb.finish()
+#wandb.finish()
+
 
 
 

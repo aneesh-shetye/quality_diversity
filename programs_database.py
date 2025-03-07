@@ -56,7 +56,7 @@ class Island:
 
     def __init__(self, 
                  code: str | list[str], 
-                 score: float | int | list[float] | list[int]): 
+                 score: float | int | list[float] | list[int], behaviour: dict | list[dict]): 
         if type(code) == list: 
             self.codes = code 
         elif type(code) == str: 
@@ -68,16 +68,27 @@ class Island:
 
         if type(score) == list: 
             self.scores = score 
-        elif type(scores) == float or type(scores) == int: 
+        elif type(score) == float or type(score) == int: 
             self.scores = [score]
         else: 
             raise ValueError("score must  be of type List[float | int] or float or int") 
         assert type(self.scores[0]) == int or type(self.scores[0]) == float,f"score must be of type List[float | int] or float or int, got score of type: {type(self.scores[0])}, e.g: {self.scores[0]}"
 
+        if type(behaviour) == list: 
+            self.behaviours = behaviour 
+        elif type(behaviour) == dict:
+            self.behaviours = [behaviour]
+        else: 
+            raise ValueError("behaviour must  be of type List[dict] or dict") 
+        assert type(self.behaviours[0]) == dict ,f"behaviour must be of type List[dict] or dict but got behaviour of type: {type(self.behaviours[0])} instead, e.g: {self.behaviours[0]}"
+
         assert len(self.codes) == len(self.scores), "codes and scores must be of same length" 
+
+        assert len(self.codes) == len(self.behaviours), "codes and scores must be of same length" 
 
         self.best_score = max(self.scores) 
         self.best_code = self.codes[np.argmax(self.scores)] 
+        self.best_behaviour =  self.behaviours[np.argmax(self.scores)]
 
         self.codes_embeddings, self.median_embedding = self.calc_median(self.codes) 
 
@@ -101,6 +112,6 @@ class Island:
 
     def get_prompt(self): 
 
-        return prefix_cartpole + random.sample(self.codes, 1)[0]
+        return prefix + random.sample(self.codes, 1)[0]
 
 
