@@ -32,9 +32,6 @@ parser.add_argument('--load_backup', default=None, type=click.File("rb"), help='
 
 embedding_model = SentenceTransformer("dunzhang/stella_en_1.5B_v5", trust_remote_code=True).cuda()
 
-wandb.init(project='quality_diversity', 
-         settings=wandb.Settings(start_method="fork"), 
-         reinit=True)
 
 model_id = "meta-llama/Llama-3.3-70B-Instruct"
 #model_id = "upiter/TinyCodeLM-400M"
@@ -134,7 +131,7 @@ sampler = pipeline
 #INITIALIZE A DISTANCE FUNCTION e.g. DBSCAN 
 
 time_step = 0 
-if __name__ == "__main__": 
+def main(): 
     for t in range(int(1e4)): 
         print("Entered the for loop")
         #code = sampler.generate(get_prompt_from_existing_islands) 
@@ -203,7 +200,12 @@ if __name__ == "__main__":
             if len(databse.keys()) > 10: 
                 database = heapq.nlargest(10, database, key=lambda island: island.best_score)
 
-wandb.finish()
 
 
 
+if __name__ == "__main__": 
+    wandb.init(project='quality_diversity', 
+         settings=wandb.Settings(start_method="fork"), 
+         reinit=True)
+    main()
+    wandb.finish()
