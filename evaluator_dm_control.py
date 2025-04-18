@@ -3,6 +3,7 @@ import time
 import re 
 import ast
 import gymnasium as gym 
+from dm_control import suite
 import traceback
 import numpy as np 
 import torch 
@@ -56,7 +57,7 @@ def single_process_extractor(generated_text:str):
   return extract_agent(candidate)
 
 
-def run_agent(candidate_code: str, env_name: str="Hopper-v4"): 
+def run_agent(candidate_code: str, env_name: str="finger"): 
 
   if candidate_code is None: 
     return None, None, None, None
@@ -82,7 +83,8 @@ def run_agent(candidate_code: str, env_name: str="Hopper-v4"):
   except: 
     return None, None, None, None
 
-  env = gym.make(env_name) 
+  env = suite.load(domain_name=env_name, task_name="turn_easy", task_kwargs={'random':123})
+
 
 
   try:
@@ -98,18 +100,18 @@ def run_agent(candidate_code: str, env_name: str="Hopper-v4"):
       done = False
       truncated = False
     '''
-    observation, info = env.reset()
+    time_step = env.reset()
     done = False
     truncated = False
 
-    while not done and not truncated:
-        action = sandbox[agent_name](observation)
+    while not time_step.last():
+        action = sandbox[agent_name](time_step.observation)
         #print(len(env.step(action)))
         total_actions_taken.append(list(action))
-        actions_taken.append(list(action) + list(observation))
-        total_actions_taken.append(list(action) + list(observation))
-        observation, reward, done, truncated, info = env.step(action)
-        total_reward += reward
+        actions_taken.append(action)
+        total_actions_taken.append(action)
+        time_step = env.step(action)
+        total_reward += time_step.reward
 
     total_total_reward += total_reward
     #total_reward = total_total_reward//5
@@ -132,8 +134,7 @@ def run_agent(candidate_code: str, env_name: str="Hopper-v4"):
     return None, None, None, None 
 
 def evaluate_agent(text: str):
-    return run_agent(text, "Hopper-v4")
-
+    return run_agent(text, "finger")
 
 
 

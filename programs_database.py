@@ -56,7 +56,7 @@ class Island:
 
     def __init__(self, 
                  code: str | list[str], 
-                 score: float | int | list[float] | list[int], behaviour: dict | list[dict]): 
+                 score: float | int | list[float] | list[int], behaviour: dict | list[dict] | list, best_score=0): 
         if type(code) == list: 
             self.codes = code 
         elif type(code) == str: 
@@ -76,11 +76,13 @@ class Island:
 
         if type(behaviour) == list: 
             self.behaviours = behaviour 
-        elif type(behaviour) == dict:
+        else:
             self.behaviours = [behaviour]
+        '''
         else: 
             raise ValueError("behaviour must  be of type List[dict] or dict") 
         assert type(self.behaviours[0]) == dict ,f"behaviour must be of type List[dict] or dict but got behaviour of type: {type(self.behaviours[0])} instead, e.g: {self.behaviours[0]}"
+        '''
 
         assert len(self.codes) == len(self.scores), "codes and scores must be of same length" 
 
@@ -112,6 +114,6 @@ class Island:
 
     def get_prompt(self): 
 
-        return prefix + random.sample(self.codes, 1)[0]
+        return prefix + self.best_code#random.sample(self.codes, 1)[0]
 
 

@@ -1,0 +1,585 @@
+wandb: Currently logged in as: tera_squid. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.19.9 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.16.6
+wandb: Run data is saved locally in /scratch/axs10302/emerge/quality_diversity/wandb/run-20250417_190511-z3uhm7b0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run whole-butterfly-115
+wandb: ⭐️ View project at https://wandb.ai/tera_squid/quality_diversity
+wandb: 🚀 View run at https://wandb.ai/tera_squid/quality_diversity/runs/z3uhm7b0
+Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:05<02:53,  5.98s/it]Loading checkpoint shards:   7%|▋         | 2/30 [00:11<02:46,  5.94s/it]Loading checkpoint shards:  10%|█         | 3/30 [00:20<03:12,  7.14s/it]Loading checkpoint shards:  13%|█▎        | 4/30 [00:28<03:14,  7.50s/it]Loading checkpoint shards:  17%|█▋        | 5/30 [00:36<03:09,  7.59s/it]Loading checkpoint shards:  20%|██        | 6/30 [00:43<03:01,  7.56s/it]Loading checkpoint shards:  23%|██▎       | 7/30 [00:51<02:53,  7.55s/it]Loading checkpoint shards:  27%|██▋       | 8/30 [00:59<02:49,  7.71s/it]Loading checkpoint shards:  30%|███       | 9/30 [01:07<02:43,  7.77s/it]Loading checkpoint shards:  33%|███▎      | 10/30 [01:14<02:32,  7.62s/it]Loading checkpoint shards:  37%|███▋      | 11/30 [01:22<02:26,  7.70s/it]Loading checkpoint shards:  40%|████      | 12/30 [01:30<02:20,  7.80s/it]Loading checkpoint shards:  43%|████▎     | 13/30 [01:38<02:12,  7.82s/it]Loading checkpoint shards:  47%|████▋     | 14/30 [01:46<02:05,  7.86s/it]Loading checkpoint shards:  50%|█████     | 15/30 [01:53<01:57,  7.82s/it]Loading checkpoint shards:  53%|█████▎    | 16/30 [02:01<01:48,  7.73s/it]Loading checkpoint shards:  57%|█████▋    | 17/30 [02:08<01:39,  7.65s/it]Loading checkpoint shards:  60%|██████    | 18/30 [02:16<01:31,  7.64s/it]Loading checkpoint shards:  63%|██████▎   | 19/30 [02:25<01:27,  7.91s/it]Loading checkpoint shards:  67%|██████▋   | 20/30 [02:32<01:16,  7.65s/it]Loading checkpoint shards:  70%|███████   | 21/30 [02:40<01:09,  7.75s/it]Loading checkpoint shards:  73%|███████▎  | 22/30 [02:47<01:00,  7.61s/it]Loading checkpoint shards:  77%|███████▋  | 23/30 [02:56<00:55,  7.91s/it]Loading checkpoint shards:  80%|████████  | 24/30 [03:03<00:47,  7.91s/it]Loading checkpoint shards:  83%|████████▎ | 25/30 [03:11<00:39,  7.89s/it]Loading checkpoint shards:  87%|████████▋ | 26/30 [03:19<00:31,  7.75s/it]Loading checkpoint shards:  90%|█████████ | 27/30 [03:26<00:23,  7.74s/it]Loading checkpoint shards:  93%|█████████▎| 28/30 [03:34<00:15,  7.78s/it]Loading checkpoint shards:  97%|█████████▋| 29/30 [03:42<00:07,  7.84s/it]Loading checkpoint shards: 100%|██████████| 30/30 [03:46<00:00,  6.46s/it]Loading checkpoint shards: 100%|██████████| 30/30 [03:46<00:00,  7.53s/it]
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: agent_v6() missing 1 required positional argument: 'reward'
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v8
+NameError: name 'nn' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in agent_v4
+NameError: name 'PolicyGradientAgent' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+
+/scratch/axs10302/emerge/quality_diversity/main.py:372: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure(figsize=(8,4))
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 109, in run_agent
+    actions_taken.append(action + list(observation))
+                         ~~~~~~~^~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate tuple (not "list") to tuple
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 111, in run_agent
+    observation, reward, done, truncated, info = env.step(action)
+                                                 ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/time_limit.py", line 57, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/order_enforcing.py", line 56, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/env_checker.py", line 49, in step
+    return env_step_passive_checker(self.env, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/utils/passive_env_checker.py", line 208, in env_step_passive_checker
+    result = env.step(action)
+             ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/inverted_pendulum_v4.py", line 119, in step
+    self.do_simulation(a, self.frame_skip)
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/mujoco_env.py", line 174, in do_simulation
+    raise ValueError(
+ValueError: Action dimension mismatch. Expected (1,), found (3,)
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 111, in run_agent
+    observation, reward, done, truncated, info = env.step(action)
+                                                 ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/time_limit.py", line 57, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/order_enforcing.py", line 56, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/env_checker.py", line 49, in step
+    return env_step_passive_checker(self.env, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/utils/passive_env_checker.py", line 208, in env_step_passive_checker
+    result = env.step(action)
+             ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/inverted_pendulum_v4.py", line 119, in step
+    self.do_simulation(a, self.frame_skip)
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/mujoco_env.py", line 174, in do_simulation
+    raise ValueError(
+ValueError: Action dimension mismatch. Expected (1,), found (3,)
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 26, in agent_v7
+IndexError: index 8 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 111, in run_agent
+    observation, reward, done, truncated, info = env.step(action)
+                                                 ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/time_limit.py", line 57, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/order_enforcing.py", line 56, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/env_checker.py", line 49, in step
+    return env_step_passive_checker(self.env, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/utils/passive_env_checker.py", line 208, in env_step_passive_checker
+    result = env.step(action)
+             ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/inverted_pendulum_v4.py", line 119, in step
+    self.do_simulation(a, self.frame_skip)
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/mujoco_env.py", line 174, in do_simulation
+    raise ValueError(
+ValueError: Action dimension mismatch. Expected (1,), found (3,)
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in agent_v8
+NameError: name 'gym' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 17, in agent_v10
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 111, in run_agent
+    observation, reward, done, truncated, info = env.step(action)
+                                                 ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/time_limit.py", line 57, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/order_enforcing.py", line 56, in step
+    return self.env.step(action)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/wrappers/env_checker.py", line 49, in step
+    return env_step_passive_checker(self.env, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/utils/passive_env_checker.py", line 208, in env_step_passive_checker
+    result = env.step(action)
+             ^^^^^^^^^^^^^^^^
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/inverted_pendulum_v4.py", line 119, in step
+    self.do_simulation(a, self.frame_skip)
+  File "/home/axs10302/.local/lib/python3.12/site-packages/gymnasium/envs/mujoco/mujoco_env.py", line 174, in do_simulation
+    raise ValueError(
+ValueError: Action dimension mismatch. Expected (1,), found (3,)
+
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 19, in agent_v6
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 109, in run_agent
+    actions_taken.append(action + list(observation))
+                         ~~~~~~~^~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate tuple (not "list") to tuple
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 3, in agent_v6
+NameError: name 'PIDController' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 50, in agent_v6
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 26, in agent_v7
+IndexError: index 7 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 36, in agent_v6
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 32, in agent_v7
+IndexError: index 7 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: agent_v7() missing 1 required positional argument: 'model'
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 25, in agent_v6
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 29, in agent_v6
+IndexError: index 4 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v6
+NameError: name 'get_action' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v7
+NameError: name 'pid_control' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v5
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 43, in agent_v6
+IndexError: index 5 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 29, in agent_v6
+IndexError: index 10 is out of bounds for axis 0 with size 4
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+slurmstepd: error: *** JOB 59393319 ON ga024 CANCELLED AT 2025-04-18T07:04:39 DUE TO TIME LIMIT ***
