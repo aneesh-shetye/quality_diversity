@@ -739,3 +739,353 @@ Error: Traceback (most recent call last):
 NameError: name 'actionassistant' is not defined
 
 A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 48, in agent_v2
+ValueError: shapes (2,2) and (11,) not aligned: 2 (dim 1) != 11 (dim 0)
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'Agent' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 40, in agent_v0
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'agent' is not defined. Did you mean: 'anext'?
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'Agent' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 31, in agent_v1
+NameError: name 'predict_state' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'torch' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 29, in agent_v2
+NameError: name 'simulate_system' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'QLearningAgent' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 12, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 16, in agent_v2
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v2
+NameError: name 'torch' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in agent_v3
+NameError: name 'Agent' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 15, in agent_v3
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 33, in agent_v0
+NameError: name 'actionassistant' is not defined
+
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 106, in run_agent
+    action = sandbox[agent_name](observation)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 16, in agent_v2
+NameError: name 'actionassistant' is not defined
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+Error: Traceback (most recent call last):
+  File "/scratch/axs10302/emerge/quality_diversity/evaluator.py", line 108, in run_agent
+    total_actions_taken.append(list(action))
+                               ^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+A decoder-only architecture is being used, but right-padding was detected! For correct generation results, please set `padding_side='left'` when initializing the tokenizer.
+slurmstepd: error: *** JOB 59412638 ON ga033 CANCELLED AT 2025-04-18T21:01:23 DUE TO TIME LIMIT ***

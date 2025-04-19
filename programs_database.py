@@ -7,29 +7,48 @@ from typing import List
 from sentence_transformers import SentenceTransformer
 
 prefix = """
-#Build an agent to solve an environment.
+Build an agent to solve an environment.
+edit the previous agent to form the function `agent_vX+1`. Define it within the `Agent` class. 
 The agent should perform better than the agent given below
-#The  environment has a hopper - a two-dimensional one-legged figure consisting of four main body parts - the torso at the top, the thigh in the middle, the leg at the bottom, and a single foot on which the entire body rests. The goal is to make hops that move in the forward (right) direction by applying torque to the three hinges that connect the four body parts.
+The  environment has a hopper - a two-dimensional one-legged figure consisting of four main body parts - the torso at the top, the thigh in the middle, the leg at the bottom, and a single foot on which the entire body rests. The goal is to make hops that move in the forward (right) direction by applying torque to the three hinges that connect the four body parts.
 
-#The input to this agent  is the current state of the environment. Its output should be an action of the form (float, float, float) where each value ranges from -1 to 1.
+The input to this agent  is the current state of the environment. Its output should be an action of the form (float, float, float) where each value ranges from -1 to 1.
 
-#This output would represent torques applied on rotors such that: 
-#action[0] = torque applied on the thigh rotor
-#action[1] = torque applied on the leg rotor
-#action[2] = torque applied on teh foot rotor
+This output would represent torques applied on rotors such that: 
+action[0] = torque applied on the thigh rotor
+action[1] = torque applied on the leg rotor
+action[2] = torque applied on teh foot rotor
 
-#The function you are designing would take in a "state" argument which is a 11 dimensional vector:
-#state[0] gives the z-coordinate of the torso (height of the hopper),
-#state[1] gives the angle of the torso, 
-#state[2] gives the angle of the thigh joint, 
-#state[3] gives the angle of the foot joint and, 
-#state[4] gives the velocity of the x-coordinate (height) of the torso
-#state[5] gives the velocity of the x-coordinate of the torso 
-#state[6] gives the velocity of the z-coordinate of the torso 
-#state[7] gives the angular velocity of the angle of the torso 
-#state[8] gives the angular velocity of the thigh hinge 
-#state [9] gives the angular velocity of the leg hinge 
-#state[10] gives the angular velocity of the foot hinge 
+The function you are designing would take in a "state" argument which is a 11 dimensional vector:
+state[0] gives the z-coordinate of the torso (height of the hopper),
+state[1] gives the angle of the torso, 
+state[2] gives the angle of the thigh joint, 
+state[3] gives the angle of the foot joint and, 
+state[4] gives the velocity of the x-coordinate (height) of the torso
+state[5] gives the velocity of the x-coordinate of the torso 
+state[6] gives the velocity of the z-coordinate of the torso 
+state[7] gives the angular velocity of the angle of the torso 
+state[8] gives the angular velocity of the thigh hinge 
+state [9] gives the angular velocity of the leg hinge 
+state[10] gives the angular velocity of the foot hinge 
+
+class Agent(): 
+    def __init__(self): 
+        pass 
+    
+    def agent_v0(state) -> tuple[float, float, float]:
+      #state[0] gives the z-coordinate of the torso (height of the hopper),
+      #state[1] gives the angle of the torso, 
+      #state[2] gives the angle of the thigh joint, 
+      #state[3] gives the angle of the foot joint and, 
+      #state[4] gives the velocity of the x-coordinate (height) of the torso
+      #state[5] gives the velocity of the x-coordinate of the torso 
+      #state[6] gives the velocity of the z-coordinate of the torso 
+      #state[7] gives the angular velocity of the angle of the torso 
+      #state[8] gives the angular velocity of the thigh hinge #state [9] gives the angular velocity of the leg hinge 
+      #state[10] gives the angular velocity of the foot hinge 
+      #Given the state output actions that would carry the object to the required position using the robotic arm.
+      return (0.0, 0.0, 0.0) 
 
                 """
 prefix_cartpole = """
