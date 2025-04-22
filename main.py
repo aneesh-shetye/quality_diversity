@@ -22,7 +22,7 @@ from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
 
 from programs_database import Island
-from evaluator import evaluate_agent
+from evaluator_mod import evaluate_agent
 from scoring import kl_divergence, wasserstein, wasserstein_with_weights
 
 import threading
@@ -49,7 +49,7 @@ wandb.init(project='quality_diversity',
          settings=wandb.Settings(start_method="fork"), 
          reinit=True)
 
-model_id = "meta-llama/Llama-3.1-8B-Instruct"
+model_id = "meta-llama/Llama-3.3-70B-Instruct"
 #model_id = "upiter/TinyCodeLM-400M"
   
 pipeline = transformers.pipeline(
@@ -57,10 +57,12 @@ pipeline = transformers.pipeline(
     model=model_id,
     model_kwargs={"torch_dtype": torch.bfloat16},
     device_map="auto",
-    batch_size=4
+    batch_size=4, 
+    padding=True, 
+    truncation=True
   )
 #tokenizer = AutoTokenizer.from_pretrained(model_id) 
-pipeline.tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+#pipeline.tokenizer.add_special_tokens({'pad_token': '[PAD]'})
 #model = AutoModelForCausalLM.from_pretrained(model_id, device_map='auto') 
 #print(f"Memory usage after loading checkpoint: {process.memory_info().rss / (1024**2):.2f} MB")
 
@@ -83,7 +85,7 @@ class Sampler:
         return model.generate(**input_ids, max_length=1024) 
         '''
         response = pipeline(input_text, max_new_tokens=1024)
-        print(response) 
+        #print(response) 
         return [t[0]['generated_text'] for t in response] 
 
 #initial_template: str 
@@ -117,7 +119,7 @@ class Agent():
     def __init__(self): 
         pass 
     
-    def agent_v0(state) -> tuple[float, float, float]:
+    def agent_v0(self,state) -> tuple[float, float, float]:
       #state[0] gives the z-coordinate of the torso (height of the hopper),
       #state[1] gives the angle of the torso, 
       #state[2] gives the angle of the thigh joint, 
@@ -221,12 +223,13 @@ def agent_v0(state) -> int:
 
 #INITIALIZE  DATABASE with 0 islands  
 global database
+database = {}
 initial_code = """
 class Agent(): 
     def __init__(self): 
         pass 
     
-    def agent_v0(state) -> tuple[float, float, float]:
+    def agent_v0(self,state) -> tuple[float, float, float]:
       #state[0] gives the z-coordinate of the torso (height of the hopper),
       #state[1] gives the angle of the torso, 
       #state[2] gives the angle of the thigh joint, 
@@ -240,7 +243,6 @@ class Agent():
       #Given the state output actions that would carry the object to the required position using the robotic arm.
       return (0.0, 0.0, 0.0) 
 """
-database = {}
 for i in range(10): 
     database[i] = initial_code
 
@@ -250,12 +252,16 @@ if __name__ == "__main__":
     for t in range(int(1e4)): 
 
 
+        print(database)
         prompts = [prefix_prompt_hopper + database[i] + '\n```'  for i in range(10)] 
         start_time = time.time()
         #print('prompting LLM') 
-        print(f'prompts: {prompts}') 
+        #print(f'prompts: {prompts}') 
         #code = sampler.generate(prompts)
         response = pipeline(prompts, max_new_tokens=1024)
+        print("########################################")
+        print(response)
+        print("########################################")
         codes = [t[0]['generated_text'] for t in response]
 
         start_time = time.time()
@@ -265,67 +271,10 @@ if __name__ == "__main__":
             result = evaluate_agent(c)
             #result: [code, total_reward, normalized_distribution, quantized action]
 
-            if result[1] not None: 
-                database[i] += c 
+            if result[1]: 
+                database[i] = result[0] 
                 wandb.log({f'score_island_{i}': result[1]})
-                wandb.log({f'program_{i}':wandb.Html(f'<pre>{c}</pre>')})
-
-
-        '''
-        wasserstein_matrix = np.zeros((len(database.keys()), len(database.keys())))
-
-        for i in database.keys(): 
-
-            plt.figure(figsize=(8,4))
-            cand_behaviour = database[i].best_behaviour
-            labels = [str(key) for key in cand_behaviour.keys()]
-            plt.bar(labels, cand_behaviour.values())
-            plt.xlabel("Actions")
-            plt.ylabel("P(a)")
-            plt.title(f"action distribution for island-{i}")
-            plt.xticks(rotation=90)
-            plt.savefig("action_plot.png")
-            wandb.log({f"action_distribution_Island_{i}":wandb.Image("action_plot.png")})
-            for j in database.keys():
-
-                wasserstein_matrix[i][j] = wasserstein_with_weights(np.array([np.array(t) for t in database[i].best_behaviour.keys()]), np.array([np.array(t) for t in database[j].best_behaviour.keys()]), np.array([np.array(t) for t in database[i].best_behaviour.values()]), np.array([np.array(t) for t in database[j].best_behaviour.values()]))
-
-        plt.figure(figsize=(8, 6))
-        sns.heatmap(wasserstein_matrix, annot=True, cmap="viridis", xticklabels=[f"D{i}" for i in range(len(database.keys()))], yticklabels=[f"D{i}" for i in range(len(database.keys()))])
-        plt.title("Pairwise Wasserstein Distance")
-
-        wandb.log({"wasserstein_distance_between_island_(best)_behaviours":wandb.Image(plt)})
-        '''
-
-
-
-        '''
-
-        with torch.no_grad():
-            code_embedding = embedding_model.encode(agent)  
-        embedding = [t.median_embedding for t in database.values()]
-        with torch.no_grad():
-            similarity = embedding_model.similarity(code_embedding, embedding)
-        print(f"similarity between agent's codes: {similarity}")
-
-        distance_from_islands = (1 - similarity).clamp(min=0)
-
-        if float(min(distance_from_islands)[0]) > 0.4: 
-            database[len(database.keys())+1] = Island(code=[agent], score=[score])
-            #database[len(islands)+1] = Island(codes=[code], scores=[score]) 
-            wandb.log({f'best_score_island_{len(database.keys())+1}': score})
-            wandb.log({f'program_{len(database.keys())+1}':wandb.Html(f'score: {score}<pre>{agent}</pre>')})
-
-        elif database[int(np.argmin(distance_from_islands))].best_score < score: 
-            database[int(np.argmin(distance_from_islands))].add_code(agent, score)
-            wandb.log({f'best_score_island_{int(np.argmin(distance_from_islands))}': score})
-            wandb.log({f'program_{int(np.argmin(distance_from_islands))}':wandb.Html(f'score: {score}<pre>{agent}</pre>')})
-        '''
-
-wandb.finish()
-
-
-
+                wandb.log({f'program_{i}':wandb.Html(f'<pre>{result[0]}</pre>')})
 
 
 

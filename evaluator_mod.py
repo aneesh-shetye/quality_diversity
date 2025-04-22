@@ -1,6 +1,6 @@
 import ast 
 import re 
-import gym 
+import gymnasium as gym 
 import traceback 
 
 import numpy as np
@@ -11,6 +11,7 @@ from collections import Counter
 
 def evaluate_agent(generated_output): 
   code_match = re.search(r"```python\n(.*?)```", generated_output, re.DOTALL)
+  print(code_match)
 
   if not code_match: 
     return None, None, None, None
@@ -38,7 +39,7 @@ def evaluate_agent(generated_output):
       agent_instance = sandbox['Agent']()
 
       env = gym.make("Hopper-v4")
-      obs, info = env.reset 
+      obs, info = env.reset() 
       total_reward = 0 
       actions_taken = []
       done = False
@@ -46,8 +47,8 @@ def evaluate_agent(generated_output):
 
       while not done and not truncated: 
         try: 
-          action = getattr(agent_instancef, last_agente_name)(obs) 
-          if not instance(action, (tuple, list)): 
+          action = getattr(agent_instance, last_agent_name)(obs) 
+          if not isinstance(action, (tuple, list)): 
             action = [float(action)]*env.action_space.shape[0]
           actions_taken.append(action)
           obs, reward, done, truncated,  _ = env.step(action)
@@ -70,7 +71,7 @@ def evaluate_agent(generated_output):
       normalized_distribution = {action: count / total_actions for action, count 
                                  in action_counts.items()}
 
-      return code_match, int(total_reward), normalized_distribution, np.array(quantized_actions) 
+      return code_match.group(1), int(total_reward), normalized_distribution, np.array(quantized_actions) 
     except Exception as e: 
       print(f"Error: {traceback.format_exc()}")
       return None, None, None, None 

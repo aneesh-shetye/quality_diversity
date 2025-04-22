@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#SBATCH --account pr_317_tandon_priority
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=16GB
-#SBATCH --gres=gpu:1
+#SBATCH --account pr_317_tandon_advanced
+#SBATCH --cpus-per-task=2
+#SBATCH --mem=32GB
+#SBATCH --gres=gpu:h100:2
 #SBATCH --job-name=quality-diversity
 #SBATCH --mail-user=axs10302@nyu.edu
-#SBATCH --time=2:00:00
+#SBATCH --time=12:00:00
 #SBATCH --output=stdout.out
 
 RUNDIR=$SCRATCH/llama3/
