@@ -34,7 +34,7 @@ done > process_memory.log &
 RAM_MONITOR_PID=$!
 PROC_MONITOR_PID=$!
 
-singularity exec --nv --overlay /scratch/axs10302/pytorch-example2/my_pytorch.ext3:r /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif /bin/bash -c " source /ext3/env.sh;
+singularity exec --nv --overlay /scratch/axs10302/pytorch-example/my_pytorch.ext3:r /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif /bin/bash -c " source /ext3/env.sh;
 torchrun main.py"
 
 nvidia-smi --query-gpu=timestamp,index,name,utilization.gpu,utilization.memory,memory.total,memory.used,memory.free \
