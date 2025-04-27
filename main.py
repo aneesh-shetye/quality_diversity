@@ -70,28 +70,28 @@ pipeline = transformers.pipeline(
   )
 
 prefix_prompt = """
-Form a function named `agent_vX` (where X is an integer not used so far in other function names) to solve gym's hopper environment. The  environment has a hopper - a two-dimensional one-legged figure consisting of four main body parts - the torso at the top, the thigh in the middle, the leg at the bottom, and a single foot on which the entire body rests. The goal is to make hops that move in the forward (right) direction by applying torque to the three hinges that connect the four body parts. 
+#Build an agent to solve an environment.
+#The  environment has a hopper - a two-dimensional one-legged figure consisting of four main body parts - the torso at the top, the thigh in the middle, the leg at the bottom, and a single foot on which the entire body rests. The goal is to make hops that move in the forward (right) direction by applying torque to the three hinges that connect the four body parts.
 
-The input to this agent  is the current state of gym's inverted pendulum v-4 environment. 
-The function you are designing would take in a "state" argument which is a tuple consisting of 2 elements- qpos nad qvel. 
-qpos is a 5 dimensional vector where:  
-qpos[0] gives the z-coordinate of the torso (height of the hopper,
-qpos[1] gives the angle of the torso, 
-qpos[2] gives the angle of the thigh joint, 
-qpos[3] gives the angle of the foot joint and, 
-qpos[4] gives the velocity of the x-coordinate (height) of the torso
+#The input to this agent  is the current state of the environment. Its output should be an action of the form (float, float, float) where each value ranges from -1 to 1.
 
-qvel is a 6 dimensional vector where: 
-qvel[0] gives the velocity of the x-coordinate of the torso 
-qvel[1] gives the velocity of the z-coordinate of the torso 
-qvel[2] gives the angular velocity of the angle of the torso 
-qvel[3] gives the angular velocity of the thigh hinge 
-qvel [4] gives the angular velocity of the leg hinge 
-qvel[5] gives the angular velocity of the foot hinge 
+#This output would represent torques applied on rotors such that:
+#action[0] = torque applied on the thigh rotor
+#action[1] = torque applied on the leg rotor
+#action[2] = torque applied on the foot rotor
 
-Use the following set of functions to solve the gym hopper environemnt.
-You could use any or none of the given functions.
-
+#The function you are designing would take in a "state" argument which is a 11 dimensional vector:
+#state[0] gives the z-coordinate of the torso (height of the hopper),
+#state[1] gives the angle of the torso,
+#state[2] gives the angle of the thigh joint,
+#state[3] gives the angle of the foot joint and,
+#state[4] gives the velocity of the x-coordinate (height) of the torso
+#state[5] gives the velocity of the x-coordinate of the torso
+#state[6] gives the velocity of the z-coordinate of the torso
+#state[7] gives the angular velocity of the angle of the torso
+#state[8] gives the angular velocity of the thigh hinge
+#state [9] gives the angular velocity of the leg hinge
+#state[10] gives the angular velocity of the foot hinge
 """
 
 #INITIALIZE  DATABASE with 0 islands  
