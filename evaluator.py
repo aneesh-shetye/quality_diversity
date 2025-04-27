@@ -62,11 +62,6 @@ def run_agent(candidate_code: str, support_code: str,  env_name: str="Hopper-v4"
     return None, None, None, None
 
   code = single_process_extractor(candidate_code)
-  code = support_code + candidate_code
-  print("########################################") 
-  print(f"code in evaluator: {code}")
-  print("########################################") 
-
   if code is None: 
     return None, None, None, None
 
@@ -78,6 +73,11 @@ def run_agent(candidate_code: str, support_code: str,  env_name: str="Hopper-v4"
 
   if code is None: 
     return None, None, None, None
+
+  code = support_code + code
+  print("########################################") 
+  print(f"code in evaluator: {code}")
+  print("########################################") 
 
   sandbox = {"__builtins__": __builtins__, "np": np, "random": random}
   #print(f'code in evaluator: {code}')

@@ -108,8 +108,10 @@ if __name__ == "__main__":
 
             response = pipeline(prompt, max_new_tokens=4096)
             code = response[0]['generated_text']
-            print(code)
             result = evaluate_agent(code, support_code=c)
+            print("###########################")
+            print(f'result:{result}')
+            print("###########################")
             #result: [code, total_reward, normalized_distribution, quantized action]
 
             if result[1]: 
